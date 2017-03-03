@@ -1,6 +1,4 @@
-#FROM node:6-alpine
-
-FROM mhart/alpine-node:7
+FROM node:7-alpine
 
 WORKDIR /app
 
