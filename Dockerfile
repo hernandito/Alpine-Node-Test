@@ -1,10 +1,12 @@
-FROM node:6-alpine
+#FROM node:6-alpine
+
+FROM mhart/alpine-node:7
 
 WORKDIR /app
 
 RUN apk update
 
-RUN apk --no-cache add tar curl && \
+RUN apk --no-cache add tar curl mc && \
   curl -L https://github.com/jishi/node-sonos-http-api/archive/master.tar.gz | tar xz --strip-components=1 -C /app && \
   mkdir cache && \
   ln -s settings/settings.json && \
