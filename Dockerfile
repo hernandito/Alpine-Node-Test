@@ -1,4 +1,4 @@
-FROM node:7-alpine
+FROM node:6-alpine
 
 WORKDIR /app
 
@@ -13,7 +13,7 @@ RUN apk --no-cache add tar curl && \
   rm -rf /tmp/* /root/.npm
 
 EXPOSE 5005
-
+VOLUME /app
 USER node
 
 HEALTHCHECK --interval=1m --timeout=2s \
